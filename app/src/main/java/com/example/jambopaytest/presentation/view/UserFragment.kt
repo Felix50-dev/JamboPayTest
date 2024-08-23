@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.jambopaytest.data.model.UiState
 import com.example.jambopaytest.databinding.FragmentUserBinding
 import com.example.jambopaytest.presentation.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,14 +48,27 @@ class UserFragment : Fragment() {
         }
 
         // Observe LiveData and update the adapter
-        viewModel.matchedUsersLiveData.observe(viewLifecycleOwner) { users ->
-            if (users.isNullOrEmpty()) {
-                binding.recyclerViewUsers.visibility = View.GONE
-                binding.textViewNoMatches.visibility = View.VISIBLE
-            } else {
-                binding.recyclerViewUsers.visibility = View.VISIBLE
-                binding.textViewNoMatches.visibility = View.GONE
-                userAdapter.updateUsers(users)
+        viewModel.matchedUsersLiveData.observe(viewLifecycleOwner) { state ->
+            when (state) {
+                is UiState.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.recyclerViewUsers.visibility = View.GONE
+                    binding.textViewNoMatches.visibility = View.GONE
+                }
+                is UiState.Success -> {
+                    binding.progressBar.visibility = View.GONE
+                    binding.recyclerViewUsers.visibility = View.VISIBLE
+                    binding.textViewNoMatches.visibility = View.GONE
+
+                    // Update RecyclerView adapter with the list of users
+                    userAdapter.updateUsers(state.data)
+                }
+                is UiState.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    binding.recyclerViewUsers.visibility = View.GONE
+                    binding.textViewNoMatches.visibility = View.VISIBLE
+                    binding.textViewNoMatches.text = state.message
+                }
             }
         }
 
