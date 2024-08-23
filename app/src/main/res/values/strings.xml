@@ -43,4 +43,11 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="no_matches_found">No matches found</string>
+    <string name="user_name">John Doe</string>
+    <string name="user_age">25 years</string>
+    <string name="user_email">johndoe@example.com</string>
+    <string name="image_description">TODO</string>
+    <string name="users">Users</string>
+    <string name="results">Results</string>
 </resources>

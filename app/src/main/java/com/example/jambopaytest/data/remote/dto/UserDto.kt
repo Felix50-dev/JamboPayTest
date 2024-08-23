@@ -1,32 +1,44 @@
 package com.example.jambopaytest.data.remote.dto
 
-data class UserDtoX(
-    val address: AddressX,
-    val age: Int,
-    val bank: BankX,
-    val birthDate: String,
-    val bloodGroup: String,
-    val company: CompanyX,
-    val crypto: CryptoX,
-    val ein: String,
-    val email: String,
-    val eyeColor: String,
-    val firstName: String,
-    val gender: String,
-    val hair: HairX,
-    val height: Double,
+import com.example.jambopaytest.data.model.User
+
+data class UserDto(
     val id: Int,
-    val image: String,
-    val ip: String,
+    val firstName: String,
     val lastName: String,
-    val macAddress: String,
     val maidenName: String,
-    val password: String,
+    val age: Int,
+    val gender: String,
+    val email: String,
     val phone: String,
-    val role: String,
-    val ssn: String,
-    val university: String,
-    val userAgent: String,
     val username: String,
-    val weight: Double
+    val password: String,
+    val birthDate: String,
+    val image: String,
+    val bloodGroup: String,
+    val height: Double,
+    val weight: Double,
+    val eyeColor: String,
+    val hair: Hair,
+    val ip: String,
+    val address: Address,
+    val macAddress: String,
+    val university: String,
+    val bank: Bank,
+    val company: Company,
+    val ein: String,
+    val ssn: String,
+    val userAgent: String,
+    val crypto: Crypto,
+    val role: String
 )
+
+fun UserDto.toUser(): User {
+    return User(
+        id = id,
+        firstName = firstName,
+        age = age,
+        email = email,
+        image = image
+    )
+}

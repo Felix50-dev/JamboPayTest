@@ -37,6 +37,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -53,7 +54,20 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
-    kapt("androidx.hilt:hilt-compiler:1.2.0")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.androidx.hilt.compiler)
+
+    //retrofit
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+
+    //MPChart
+    implementation (libs.mpandroidchart)
+
+    //Glide
+    implementation (libs.glide)
+    kapt (libs.compiler)
+
+
 }
