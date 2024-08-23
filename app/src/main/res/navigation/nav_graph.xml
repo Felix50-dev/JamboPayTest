@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.jambopaytest.UserFragment"
+        android:name="com.example.jambopaytest.presentation.view.UserFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_user">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.jambopaytest.ChartFragment"
+        android:name="com.example.jambopaytest.presentation.view.ChartFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 

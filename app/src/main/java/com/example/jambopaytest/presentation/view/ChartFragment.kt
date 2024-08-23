@@ -1,4 +1,4 @@
-package com.example.jambopaytest
+package com.example.jambopaytest.presentation.view
 
 import android.graphics.Color
 import android.os.Bundle

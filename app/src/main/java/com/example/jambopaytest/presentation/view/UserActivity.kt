@@ -1,13 +1,14 @@
-package com.example.jambopaytest
+package com.example.jambopaytest.presentation.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
+import com.example.jambopaytest.R
 import com.example.jambopaytest.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class UserActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 

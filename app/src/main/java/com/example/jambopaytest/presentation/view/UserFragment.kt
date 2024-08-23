@@ -1,4 +1,4 @@
-package com.example.jambopaytest
+package com.example.jambopaytest.presentation.view
 
 import android.os.Bundle
 import android.util.Log
@@ -13,7 +13,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.jambopaytest.databinding.FragmentUserBinding
-import com.example.jambopaytest.presentation.view.UserAdapter
 import com.example.jambopaytest.presentation.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job

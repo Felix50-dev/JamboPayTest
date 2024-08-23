@@ -16,7 +16,7 @@
         android:theme="@style/Theme.JamboPayTest"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.view.UserActivity"
             android:exported="true"
             android:theme="@style/Theme.JamboPayTest">
             <intent-filter>
