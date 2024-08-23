@@ -17,10 +17,12 @@ This pattern is particularly useful in applications with complex UI, as it helps
 
 **ViewModel**: Acts as a bridge between the Model and the View. It exposes the data and operations needed by the View, processes user inputs, and handles the logic of updating the View.
 
-Benefits of MVVM:
-Separation of Concerns: Each layer (Model, View, and ViewModel) has a distinct responsibility, making the codebase cleaner and more organized.
-Testability: Since the ViewModel is separated from the View, you can write unit tests for the ViewModel without worrying about the UI.
-Reusability: The same ViewModel can be reused with different Views, allowing for more flexible code reuse.
+### Benefits of MVVM:
+**Separation of Concerns**: Each layer (Model, View, and ViewModel) has a distinct responsibility, making the codebase cleaner and more organized.
+
+**Testability**: Since the ViewModel is separated from the View, you can write unit tests for the ViewModel without worrying about the UI.
+
+**Reusability**: The same ViewModel can be reused with different Views, allowing for more flexible code reuse.
  
 ## Features
 
